@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1436969415 source:d:\mine_project\poj\3664\3664.cpp
+	<iostream>
+	<stdio.h>
+	<algorithm>
+	<vector>
+

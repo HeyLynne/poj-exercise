@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1419001310 source:d:\mine_project\poj\bst\bst.cpp
+	<iostream>
+	<stdio.h>
+	<string>
+	<stdlib.h>
+	<stack>
+

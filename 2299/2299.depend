@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1436958394 source:d:\mine_project\poj\2299\1.cpp
+	<iostream>
+	<stdio.h>
+	<map>
+

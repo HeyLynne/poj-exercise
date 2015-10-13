@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1444659900 source:d:\mine_project\poj-exercise\3320_hash_1\3320.cpp
+	<iostream>
+	<stdio.h>
+	<cstring>
+

@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1458185419 source:d:\mine_project\poj-exercise\mergesort\1.cpp
+	<iostream>
+	<vector>
+

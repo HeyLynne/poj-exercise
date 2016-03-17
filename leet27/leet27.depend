@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1457668233 source:d:\mine_project\poj-exercise\leet27\1.cpp
+	<iostream>
+	<stdio.h>
+	<vector>
+

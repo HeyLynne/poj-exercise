@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1450427448 source:d:\mine_project\poj-exercise\al2\al2.cpp
+	<iostream>
+	<stdio.h>
+	<windows.h>
+

@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1461903442 source:d:\mine_project\poj-exercise\full-permutation\fpermutation.cpp
+	<iostream>
+	<string>
+

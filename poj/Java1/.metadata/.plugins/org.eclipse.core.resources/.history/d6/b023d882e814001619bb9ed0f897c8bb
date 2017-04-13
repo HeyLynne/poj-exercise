@@ -1,0 +1,97 @@
+import java.io.*;  
+import java.net.*; 
+
+//服务器程序
+public class UDPServer extends ServerSocket{
+	static int port=8000;
+	public UDPServer() throws IOException{
+		super(port);		  
+        try {
+            while (true) {
+                Socket socket = accept();
+                //new CreateServerThread(socket);//当有请求时，启一个线程处理
+            }
+        }catch (IOException e) {
+        }finally {
+            close();
+        }
+	}
+	
+	 class CreateServerThread extends Thread {
+	        private Socket client;
+	        private BufferedReader bufferedReader;
+	        private PrintWriter printWriter;
+	  
+	        public CreateServerThread(Socket s)throws IOException {
+	            client = s;
+	  
+	            bufferedReader =new BufferedReader(new InputStreamReader(client.getInputStream()));
+	              
+	            printWriter =new PrintWriter(client.getOutputStream(),true);
+	            System.out.println("Client(" + getName() +") come in...");
+	              
+	            start();
+	        }
+	  
+	        public void run() {
+	            try {
+	                String line = bufferedReader.readLine();
+	  
+	                while (!line.equals("bye")) {
+	                    printWriter.println("continue, Client(" + getName() +")!");
+	                    line = bufferedReader.readLine();
+	                    System.out.println("Client(" + getName() +") say: " + line);
+	                }
+	                printWriter.println("bye, Client(" + getName() +")!");
+	                  
+	                System.out.println("Client(" + getName() +") exit!");
+	                printWriter.close();
+	                bufferedReader.close();
+	                client.close();
+	            }catch (IOException e) {
+	            }
+	        }
+	    }
+	  
+	    public static void main(String[] args)throws IOException {
+	        new UDPServer();
+	    }
+//	public static void main(String[] args) throws SocketException{
+//		//指定服务端口，创建服务器DatagramSocket对象
+//		int port = 8000;
+//		DatagramSocket socket;
+//		
+//		//与服务器的一个固定端口绑定
+//		socket = new DatagramSocket(port);
+//		System.out.println("服务器成功启动");
+//		
+//		/* 处理与客户端的通信
+//		        通信包括接受来自客户端的文本信息和向客户端发送文本信息，循环重复接收和发送文本信息，
+//		        知道客户端关闭数据报套接字*/
+//		while(true){
+//			try{
+//				//创建一个接受客户端文本的DatagramSocket对象
+//				DatagramPacket packet = new DatagramPacket(new byte[512],512);
+//				
+//				//接受来自任意一个UDPClient的数据报
+//				socket.receive(packet);
+//				String msg = new String(packet.getData(),0,packet.getLength());
+//				System.out.println(packet.getAddress()+":"+packet.getPort()+">"+msg);
+//				
+//				//将客户端输入的文本作为输出流，发送给客户端
+//				packet.setData(echo(msg).getBytes());
+//				
+//				//给UDPClient回复一个数据报
+//				socket.send(packet);
+//			}catch(IOException e){
+//				e.printStackTrace();
+//			}
+//		}
+//	}
+	
+	//返回字符串“echo:”+msg
+	private static String echo(String msg) {
+		// TODO Auto-generated method stub
+		return ("echo:"+msg);
+	}
+}

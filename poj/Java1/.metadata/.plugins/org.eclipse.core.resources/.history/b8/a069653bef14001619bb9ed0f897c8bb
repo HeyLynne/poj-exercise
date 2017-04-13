@@ -1,0 +1,45 @@
+import java.io.*;  
+import java.net.*; 
+import java.util.Date;
+
+//服务器程序
+public class UDPServer{	
+	public static void main(String[] args) throws SocketException{
+		//指定服务端口，创建服务器DatagramSocket对象
+		int port = 8000;
+		DatagramSocket socket;
+		
+		//与服务器的一个固定端口绑定
+		socket = new DatagramSocket(port);
+		System.out.println("服务器成功启动");
+		
+		/* 处理与客户端的通信
+		        通信包括接受来自客户端的文本信息和向客户端发送文本信息，循环重复接收和发送文本信息，
+		        知道客户端关闭数据报套接字*/
+		while(true){
+			try{
+				//创建一个接受客户端文本的DatagramSocket对象
+				DatagramPacket packet = new DatagramPacket(new byte[512],512);
+				
+				//接受来自任意一个UDPClient的数据报
+				socket.receive(packet);
+				String msg = new String(packet.getData(),0,packet.getLength());
+				System.out.println(packet.getAddress()+":"+packet.getPort()+" says: "+msg);
+				
+				//将客户端输入的文本作为输出流，发送给客户端
+				packet.setData(echo(msg).getBytes());
+				
+				//给UDPClient回复一个数据报
+				socket.send(packet);
+			}catch(IOException e){
+				e.printStackTrace();
+			}
+		}
+	}
+	
+	private static String echo(String msg) {
+		// TODO Auto-generated method stub
+		Date cTime=new Date();
+		return ("from server"+cTime.toString().split(" ")[3]+"->"+msg);
+	}
+}

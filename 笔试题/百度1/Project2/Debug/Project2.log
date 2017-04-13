@@ -1,0 +1,15 @@
+﻿生成启动时间为 2016/9/20 18:55:57。
+     1>项目“D:\mine_project\poj-exercise\Project2\Project2\Project2.vcxproj”在节点 2 上(Build 个目标)。
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\\" /AI"C:\Program Files (x86)\Windows Kits\8.1\References\CommonConfiguration\Neutral" /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\Facades\\" /Zi /clr /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _UNICODE /D UNICODE /EHa /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /TP /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\mscorlib.dll" /analyze- /errorReport:prompt /clr:nostdlib 1.cpp
+         1.cpp
+     1>1.cpp(14): warning C4018: “<”: 有符号/无符号不匹配
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\mine_project\poj-exercise\Project2\Debug\Project2.exe" /INCREMENTAL /NOLOGO /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\mine_project\poj-exercise\Project2\Debug\Project2.pdb" /ASSEMBLYDEBUG /TLBID:1 /DYNAMICBASE /FIXED:NO /NXCOMPAT /MACHINE:X86 Debug\1.obj
+         "Debug\.NETFramework,Version=v4.5.AssemblyAttributes.obj"
+         Project2.vcxproj -> D:\mine_project\poj-exercise\Project2\Debug\Project2.exe
+     1>已完成生成项目“D:\mine_project\poj-exercise\Project2\Project2\Project2.vcxproj”(Build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:01.97

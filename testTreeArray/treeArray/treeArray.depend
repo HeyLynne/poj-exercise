@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1490692094 source:d:\mine_project\code\c++\practice\testtreearray\treearray\1.cpp
+	<iostream>
+	<vector>
+

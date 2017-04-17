@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1491381312 source:d:\mine_project\code\c++\practice\testdijstra\dij\1.cpp
+	<iostream>
+	<vector>
+	<unordered_set>
+	<string>
+
